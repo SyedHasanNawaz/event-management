@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from './features/authSlice';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Events from './pages/Events';
+import EventDetails from './pages/EventDetails';
 
 function ProtectedRoute({ children }) {
   const user = useSelector((state) => state.auth.user);
@@ -31,7 +33,8 @@ export default function App() {
         <Route path="/" element={<Navigate to="/events" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/events" element={<div style={{ padding: '2rem' }}><h2>Events Page (Coming Next)</h2></div>} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/my-events" element={
           <ProtectedRoute>
             <div style={{ padding: '2rem' }}><h2>My Events (Coming Next)</h2></div>
