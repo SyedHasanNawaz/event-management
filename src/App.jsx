@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Events from './pages/Events';
 import EventDetails from './pages/EventDetails';
-import MyEvents from './pages/MyEvents'; // <-- Add this import
+import MyEvents from './pages/MyEvents'; 
 
 function ProtectedRoute({ children }) {
   const user = useSelector((state) => state.auth.user);
@@ -38,7 +38,7 @@ export default function App() {
         <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/my-events" element={
           <ProtectedRoute>
-            <MyEvents /> {/* <-- Replace the placeholder with this */}
+            <MyEvents /> {}
           </ProtectedRoute>
         } />
       </Routes>
